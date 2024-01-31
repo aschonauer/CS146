@@ -1,1 +1,16 @@
+nums = list(())
+length = int(input("Enter length of array: \n"))
+for i in range(length):
+    nums.append(int(input("Enter element: \n")))
 
+target = int(input("Enter target sum: \n"))
+
+numsList = {}
+for i in range(length):
+    numsList[nums[i]] = target - nums[i]
+
+for i in range(length):
+    num1 = numsList[nums[i]]
+    for j in range(i+1, length):
+        if num1 == nums[j]:
+            print("index 1: ", i,"\nindex 2: ", j)
