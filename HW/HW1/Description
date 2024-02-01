@@ -1,1 +1,8 @@
+This code is designed to test if a word is a palindrome.
 
+First take in a user inputted phrase/word.
+Then make the word all lowercase and remove all non-alphanumeric characters.
+Create an array of the characters in the word.
+Reverse the order of the chars in the array over a loop.
+If the original array and this new one are the same, return true, it is a palindrome.
+If the original array and the new one are different, return false, it is not a palindrome.
