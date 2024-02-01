@@ -1,1 +1,5 @@
+Both in the java and python versions of this project take in a user inputted array of numbers. Java's is saved in an array and Python's in a list. Then it takes in a user inputted target sum.
 
+The arrays are converted into a hashmap (dictionary in python) where the key is the number in the array, and the value is the number needed to make the target sum (target - key)
+
+Search through the keys of the hashmap using the array and see if the value attatched to the key is in the array. If the value exists in the array then use the two indices from the nested for loops and return/print them. 
