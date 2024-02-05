@@ -1,1 +1,7 @@
-This code will take in 2 words and test if they are anagrams of each other
+This code will take in 2 words and test if they are anagrams of each other.
+
+First it takes away any spaces in the words/phrases.
+Then it splits the words into 2 arrays of characters. 
+Then it sorts each of these arrays in alphabetical order.
+Then it compares the two arrays to see if they are equal.
+If they are equal then they are anagrams of each other, and if not they are not anagrams.
