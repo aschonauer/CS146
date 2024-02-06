@@ -9,12 +9,10 @@ n = input("Enter number of versions: ")
 low = 1
 high = int(n)
 verNum = 0
-print(low, " ", high)
 
 while low <= high:
     mid = int(low + (high - low) / 2)
     bad = isBadVersion(mid)
-    print(mid)
     if bad:
         verNum = mid
         high = mid - 1
