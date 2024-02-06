@@ -1,1 +1,10 @@
+Given n versions [1, 2, ..., n] and finding the first bad version using 
+the given API isBadVersion(version) which returns whether the version is bad.
 
+First ask for user input of versions (n).
+Use binary search methods to find the first bad version.
+Instead of returning the first bad that is found, it will go
+until settling on the first bad using an if else statement to
+figure out if we should go up in the version list or go down.
+Once low is greater than high it will exit the search and print out
+the bad version.
