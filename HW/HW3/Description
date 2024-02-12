@@ -1,1 +1,13 @@
+INSERTION SORT:
+This method goes through every element in the array (for loop) and if it is smaller
+than the one ahead of it it will move towards the front (while loop). If the list is
+already sorted, then it will only go through the for loop. The for loop by itself
+is O(N), so O(N) is the time complexity for the best-case scenario.
+The worst case and average case goes through and moves all of the elements in the list.
+Making the complexity O(N^2)
 
+MATRIX_MULTIPLICATION:
+In matrix multiplication there is a nested for loop inside of a nested for loop. 
+No matter what, it will go through each element in the loop. So, the best-case,
+worst-case, and average-case are all the same. Because the for loops go through
+a set amount of columns/rows each by itself is N, and N*N*N = N^3. 
