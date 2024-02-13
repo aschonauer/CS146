@@ -1,1 +1,33 @@
+Insertion sort uses the loops below:
+for(int i = 1; i < nums.length; i++) {    //N+1 (c1)
+  something...                            //N(c2)
+  while(j >= 0 && nums[j] > item) {       //N(N+1) (c3)
+    something....                         //N(N) (c4)
+  }
+}
 
+N+1(c1) + N(c2) + N(N+1)(c3) + N(N)(c4) = N(c1)+(c1)+N(c2)+N^2(c3)+N(c3)+N^2(c4)
+= N^2(c3+c4) + N(c1+c2+c3) + c1, quadratic
+N^2 growth.
+
+In the best-case, the while loop will not need to be used at all, giving the
+growth to just be N. The average case will always use the while loop and take
+the element half way through the list. The worst case will have to move every
+element all the way to the front because the list was perfectly reversed.
+
+f(n) = N^2(c3+c4) + N(c1+c2+c3) + c1
+
+WORST CASE/AVERAGE CASE:
+n0 = 1
+O(): N^2(c3+c4) + N(c1+c2+c3) + c1 ≤ N^2(c3+c4) + N^2(c1+c2+c3) + N^2(c1) -> f(n) = O(N^2)
+Ω(): N^2 ≤ N^2(c3+c4) + N(c1+c2+c3) + c1 -> f(n) = Ω(N^2)
+Θ(N^2) since both O and Ω are N^2
+
+BEST CASE:
+N+1(c1) + N(c2) + N(c3) + 0(c4) = N(c1+c2+c3) + c1, N growth, linear
+
+f(n) = N(c1+c2+c3) + c1
+n0 = 1
+O(): N(c1+c2+c3) + c1 ≤ N(c1+c2+c3) + N(c1) -> f(n) = O(N)
+Ω(): N ≤ N(c1+c2+c3) + c1 -> f(n) = Ω(N)
+Θ(N) since both O and Ω are N
