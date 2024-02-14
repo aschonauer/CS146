@@ -1,1 +1,53 @@
+Comparing math functions to find which is asymptotically greater.
 
+1. 10000000000n^2 vs n^3
+O(): 10000000000n^2 <= 10000000000n^2 | f(n) = O(n^2)
+Ω(): n^2 <= 10000000000n^2 | f(n) = Ω(n^2)
+θ(): θ(n^2)
+
+O(): n^3 <= n^3 | f(n) = O(n^3)
+Ω(): n^3 <= n^3 | f(n) = Ω(n^3)
+θ(): θ(n^3)
+
+n^3 is asymtotically greater since θ(n^3) is greater than θ(n^2)
+
+2. n^2*log(n) vs n(log(n))^10
+nlog(n) vs (log(n))^10
+n vs (log(n))^9
+log(n) vs 9loglog(n)
+
+O(): log(n) <= log(n) | f(n) = O(log(n))
+Ω(): log(n) <= log(n) | f(n) = Ω(log(n))
+θ(): θ(log(n))
+
+O(): 9loglog(n) <= 10loglog(n) | f(n) = O(loglog(n))
+Ω(): loglog(n) <= 9loglog(n) | f(n) = Ω(loglog(n))
+θ(): θ(loglog(n))
+
+n^2*log(n) is asymptotically greater since θ(log(n)) is greater than θ(loglog(n))
+
+3. n^(logn) vs 2^(sqrt(n))
+logn*logn vs sqrt(n)log(2)
+
+O(): logn*logn <= (logn)^2 | f(n) = O((logn)^2)
+Ω(): (logn)^2 <= logn*logn | f(n) = Ω((logn)^2)
+θ(): θ((logn)^2)
+
+O(): sqrt(n)log(2) <= sqrt(n)log(2) | f(n) = O(sqrt(n))
+Ω(): sqrt(n) <= sqrt(n)log(2) | f(n) = Ω(sqrt(n))
+θ(): θ(sqrt(n))
+
+2^(sqrt(n)) is asymptotically greater since θ(sqrt(n)) is greater than θ(): θ((logn)^2)
+
+4. 2^n vs 2^(2n)
+n vs 2n
+
+O(): n <= n | f(n) = O(n)
+Ω(): n <= n | f(n) = Ω(n)
+θ(): θ(n)
+
+O(): 2n <= 2n | f(n) = O(n)
+Ω(): n <= 2n | f(n) = Ω(n)
+θ(): θ(n)
+
+Both of these functions are asymtotically equal both with θ(n)
