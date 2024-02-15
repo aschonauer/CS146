@@ -1,11 +1,11 @@
 Creating asymtotic notation for:
 
 isPrime(n):                     //c1
-  for(i = 2, i*i <= n; i++) {   //
-    if(n % i == 0) {
-      return false
+  for(i = 2, i*i <= n; i++) {   //sqrt(N)+1(c2)
+    if(n % i == 0) {            //sqrt(N)(c3)
+      return false              //c4 or 0
     }
-  return true
+  return true                   //c4 or 0
 
 1. Best Case: n is < 4 and skips the for loop and returns true
 2. Worst Case: n is >= 4 and is a prime number, goes through the for loop maximum # of times
@@ -14,6 +14,12 @@ isPrime(n):                     //c1
 Best Case: O(1), Ω(1), then θ(1)
 
 Worst/Average Case:
-O(): 
-Ω(): 
-θ(): 
+Growth of the for loop:
+i^2 > n
+i > sqrt(n)
+growth: sqrt(n)
+
+f(n) = sqrt(N)(c2+c3) + (c1+c2+c4) | n0 >= 2
+O(): sqrt(N)(c2+c3) + (c1+c2+c4) <= sqrt(N)(c2+c3) + sqrt(N)(c1+c2+c3) | f(n) = O(sqrt(N))
+Ω(): sqrt(N) <= sqrt(N)(c2+c3) + (c1+c2+c4) | f(n) = Ω(sqrt(N))
+θ(): θ(sqrt(N))
