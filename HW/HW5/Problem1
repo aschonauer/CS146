@@ -33,4 +33,9 @@ T(N) = aT(N/b)+f(n)
 where a >=1,b > 1, And f(n) = O(n^(logb(a)-e)) where e>0 then T(n) = Θ(n^(logb(a)))
 f(n) = O(n^2)
 f(n) = O(n^(log2(9)-e)) = O(n^(3.169 - 1.169)) = O(n^2) | 1.169 > 0
-T(N) = Θ(N^log2(9))
+T(n) = Θ(n^log2(9))
+
+4. T(N) = 100T(N/2) + n^(log2(cn) + 1)  (c is a constant)
+
+
+
