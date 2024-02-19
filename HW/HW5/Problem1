@@ -2,10 +2,10 @@ For each of the following recurrences, verify the answer you get by applying the
 
 1 T(N) = 2T(N-1) + 1
 2 T(N) = 3T(N-1) + n
-3 T(N) = 9T(N/2) + n2
-4 T(N) = 100T(N/2) + nlog2cn + 1  (c is a constant)
-5 T(N) = 4T(N/2) + n2logn
-6 T(N) = 5T(N/2) + n2/logn
+3 T(N) = 9T(N/2) + n^2
+4 T(N) = 100T(N/2) + n^(log2(cn) + 1)  (c is a constant)
+5 T(N) = 4T(N/2) + n^2 * logn
+6 T(N) = 5T(N/2) + n^2 / logn
 
 1. T(N) = 2T(N-1) + 1
 T(N-1) = 2T(N-2) + 1
@@ -27,4 +27,4 @@ T(N) = aT(N-b)+f(n)
 where a,b > 0, f(n) = O(N^k) and k>0, if a>1 then T(n) = O(n^k * a^n/b)
 O(n*3^n)
 
-3. T(N) = 9T(N/2) + n2
+3. T(N) = 9T(N/2) + n^2
