@@ -13,8 +13,18 @@ T(N-2) = 2T(N-3) + 1
 
 T(N) = 2(2T(N-2) + 1) + 1 = 4T(N-2) + 2
 T(N) = 4(2T(N-3) + 1) + 2 = 8T(N-3) + 3
+T(N) = (2^k)T(N-k) + k
 
 Let N-k = 0
 ∴ N = k
 ∴ T(N) = (2^N)T(0) + N
 ∴ T(N) = 2^N + N
+Θ(N^2)
+
+2. T(N) = 3T(N-1) + n
+Apply Master Method
+T(N) = aT(N-b)+f(n)
+where a,b > 0, f(n) = O(N^k) and k>0, if a>1 then T(n) = O(n^k * a^n/b)
+O(n*3^n)
+
+3. T(N) = 9T(N/2) + n2
