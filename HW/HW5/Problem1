@@ -70,6 +70,48 @@ where a >=1,b > 1, And f(n) = O(n^logb(a)-e) where e>0 then T(n) = Θ(n^logb(a))
 Θ(n^log2(9)) same as algebraic!
 
 4. T(N) = 100T(N/2) + n^(log2(cn) + 1)  (c is a constant)
+T(N/2) = 100T(N/4) + (n/2)^(log2(c(n/2)) + 1)
+T(N/4) = 100T(N/8) + (n/4)^(log2(c(n/4)) + 1)
+
+T(N) = 100(100T(N/4) + (n/2)^(log2(c(n/2) + 1))) + n^(log2(cn) + 1) 
+        = 10000T(N/4) + 100((n/2)^(log2(c(n/2)) + 1)) + n^(log2(cn) + 1)
+
+T(N) = 10000(100T(N/8) + (n/4)^(log2(c(n/4)) + 1)) + 100((n/4)^(log2(c(n/4)) + 1)) + n^(log2(cn) + 1)
+        = 1000000T(N/8) + 10000((n/4)^(log2(c(n/4)) + 1)) + 100((n/2)^(log2(c(n/2)) + 1)) + n^(log2(cn) + 1)
+
+T(N) = 100^k(T(N/2^k)) + 100^(k/4)(k/4)^(log2(c(k/4))+1) + 100^(k/2)(k/2)^(log2(c(k/2))+1)
+          + ... + 100((n/2)^(log2(c(n/2)) + 1)) + n^(log2(cn) + 1)
+
+Let N/2^k = 1
+k = log2(N)
+T(N) = 100^log2(N)(T(1)) + 100^(log2(N)/2)*(n-log2(N)+1)^(log2(c(n-log2(N)+1))+1)
+      + 100^(log2(N)/4)*(n-log2(N)+2)^(log2(c(n-log2(N)+2))+1) 
+      +...+ 100(n/2)^log2(c(N-1))+1 + N^log2(Nc)+1
+T(N) = Θ(N^log2(100))
+
+Apply Master Method
+where a >=1,b > 1, And f(n) = Θ(n^logb(a)-e) where e>0 then T(n) = Θ(n^logb(a))
+Θ(n^log2(100)) same as algebraic
+
+5. T(N) = 4T(N/2) + n^2 * logn
+T(N/2) = 4T(N/4) + (n/2)^2 * log(n/2)
+T(N/4) = 4T(N/8) + (n/4)^2 * log(n/4)
+
+T(N) = 4(4T(N/4) + (n/2)^2 * log(n/2)) + n^2 * logn = 16T(N/4) + 4(n/2)^2*log(n/2)) + n^2*logn
+T(N) = 16(4T(N/8) + (n/4)^2 * log(n/4)) + 4(n/2)^2*log(n/2)) + n^2*logn
+      = 64T(N/8) + 16(n/4)^2*log(n/4)) + 4(n/2)^2*log(n/2)) + n^2*logn
+T(N) = (4^k)T(N/2^k) + 2^(k-1)(n/2^k-2)^log(n/2^k-2) + 2^(k-2)(n/2^k-3)^log(n/2^k-3)
+        + ... + 4(n/2)^2*log(n/2)) + n^2*logn
+
+Let N/2^k = 1
+k = log2(N)
+T(N) = 4^log2(N) + 2^(log2(N)-1)(4)) + 2^(log2(N)-2)(8) +...+ 4(n/2)^2*log(n/2)) + n^2*logn
+T(N) = Θ(N^log2(4) * log(n))
+
+Apply Master Method
+f(n) = Θ(n^logb(a)-e * log^k(n)) where k>=0 then T(n) = Θ(n^logb(a) * log^k+1(n)
+T(n) = Θ(n^log2(4) * log(n)) same as algebraic
 
 
+6. T(N) = 5T(N/2) + n^2 / logn
 
