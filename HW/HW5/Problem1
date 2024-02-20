@@ -27,18 +27,19 @@ where a,b > 0, f(n) = O(N^k) and k>=0, if a>1 then T(n) = O(n^k * a^n/b)
 T(n) = O(n^0 * 2^(n/1))
 T(N) = O(2^N) Same as algebraic method!
 
-2. T(N) = 3T(N-1) + n
-T(N-1) = 3T(N-2) + n
-T(N-2) = 3T(N-3) + n
 
-T(N) = 3(3T(N-2) + n) + n = 9T(N-2) + 4n
-T(N) = 9(3T(N-3) + n) + 4n = 27T(N-3) + 7n
-T(N) = 3^k*T(N-k) + (2^k - 1)n
+2. T(N) = 3T(N-1) + n
+T(N-1) = 3T(N-2) + n - 1
+T(N-2) = 3T(N-3) + n - 2
+
+T(N) = 3(3T(N-2) + n - 1) + n = 9T(N-2) + 3(n-1) + n
+T(N) = 9(3T(N-3) + n - 2) + 3(n-1) + n = 27T(N-3) + 9(n-2) + 3(n-1) + n
+T(N) = 3^k*T(N-k) + 3^(k-1)(n-k+1) + 3^(k-2)(n-k+2) + ... + 3(n-1) + n
 
 Let N-k = 0
 ∴ N = k
-∴ T(N) = 3^N * T(0) + (2^N - 1)N
-∴ T(N) = 3^N + (2^N - 1)N
+∴ T(N) = 3^N * T(0) + 3^(n-1)(n-n+1) + 3^(n-2)(n-n+2) + ... + 3(n-1) + n
+∴ T(N) = 3^N + 3^(n-1) + 3^(n-2)*2 + ... + 3(n-1) + n
 O(3^N * N)
 
 Apply Master Method
@@ -46,15 +47,27 @@ T(N) = aT(N-b)+f(n)
 where a,b > 0, f(n) = O(N^k) and k>0, if a>1 then T(n) = O(n^k * a^n/b)
 O(n*3^n) Same as algebraic method!
 
-3. T(N) = 9T(N/2) + n^2
 
+3. T(N) = 9T(N/2) + n^2
+T(N/2) = 9T(N/4) + (n/2)^2
+T(N/4) = 9T(N/8) + (n/4)^2
+
+T(N) = 9(9T(N/4) + (n/2)^2) + n^2 = 81T(N/4) + 9(n/2)^2 + n^2
+T(N) = 81(9T(N/8) + (n/4)^2) + 10n^2 = 729T(N/8) + 81(n/4)^2 + 9(n/2)^2 + n^2
+T(N) = 9^k * T(N/(2^k)) + 9^(k-1)(n/2^(k-1))^2 + 9^(k-2)(n/2^(k-2))^2 + ... + 9(n/2)^2 + n^2
+
+let N/(2^k) = 1
+∴ N = 2^k
+∴ k = log2(N)
+∴ T(N) = 9^log2(N) * T(1) + 9^(log2(N)-1)(N/2^(log2(N)-1))^2 + ... + 9(N/2)^2 + N^2
+N^2 is less than 9^log2(N)
+∴ T(N) = Θ(9^log2(N)) = Θ(N^log2(9))
 
 Apply Master Method
 T(N) = aT(N/b)+f(n)
-where a >=1,b > 1, And f(n) = O(n^(logb(a)-e)) where e>0 then T(n) = Θ(n^(logb(a)))
 f(n) = O(n^2)
-f(n) = O(n^(log2(9)-e)) = O(n^(3.169 - 1.169)) = O(n^2) | 1.169 > 0
-T(n) = Θ(n^log2(9))
+where a >=1,b > 1, And f(n) = O(n^logb(a)-e) where e>0 then T(n) = Θ(n^logb(a))
+Θ(n^log2(9)) same as algebraic!
 
 4. T(N) = 100T(N/2) + n^(log2(cn) + 1)  (c is a constant)
 
