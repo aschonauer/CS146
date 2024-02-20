@@ -1,0 +1,15 @@
+Below is some pseudocode. Come up with a recurrence relation, and solve that recurrence relation using 
+any method of your choice.  
+
+yetAnotherFunc(n):        //T(N)
+  if n > 1:               //c1
+    for(i=0;i<10n;i++)    //10N+1
+      doSomething;        //10N
+    yetAnotherFunc(n/2);  //T(N/2)
+    yetAnotherFunc(n/2);  //T(N/2)
+
+T(N) = 2T(N/2) + 10N + 1
+
+Apply Master Method
+where a >=1,b > 1, And f(n) = O(n^logb(a)-e) where e>0 then T(n) = Θ(n^logb(a))
+T(N) = Θ(N^log2(2)) = Θ(N)
