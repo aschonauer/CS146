@@ -105,7 +105,7 @@ T(N) = (4^k)T(N/2^k) + 2^(k-1)(n/2^k-2)^log(n/2^k-2) + 2^(k-2)(n/2^k-3)^log(n/2^
 
 Let N/2^k = 1
 k = log2(N)
-T(N) = 4^log2(N) + 2^(log2(N)-1)(4)) + 2^(log2(N)-2)(8) +...+ 4(n/2)^2*log(n/2)) + n^2*logn
+T(N) = 4^log2(N) + 2^(log2(N)-1)(4)*log(4)) + 2^(log2(N)-2)(8)*log(8) +...+ 4(n/2)^2*log(n/2)) + n^2*logn
 T(N) = Θ(N^log2(4) * log(n))
 
 Apply Master Method
@@ -114,4 +114,22 @@ T(n) = Θ(n^log2(4) * log(n)) same as algebraic
 
 
 6. T(N) = 5T(N/2) + n^2 / logn
+T(N/2) = 5T(N/4) + (n/2)^2 / log(n/2)
+T(N/4) = 5T(N/8) + (n/4)^2 / log(n/4)
+
+T(N) = 5(5T(N/4) + (n/2)^2 / log(n/2)) + n^2 / logn = 25T(N/4) + 5(n/2)^2/log(n/2)) + n^2/logn
+T(N) = 25(5T(N/8) + (n/4)^2 / log(n/4)) + 5(n/2)^2/log(n/2)) + n^2/logn
+      = 125T(N/8) + 25(n/4)^2/log(n/4)) + 5(n/2)^2/log(n/2)) + n^2/logn
+T(N) = (5^k)T(N/2^k) + 5^(k-1)(n/2^k-2)^2/log(n/2^k-2) + 5^(k-2)(n/2^k-3)^2/log(n/2^k-3)
+        + ... + 5(n/2)^2/log(n/2)) + n^2/logn
+
+Let N/2^k = 1
+k = log2(N)
+T(N) = 5^log2(N) + 5^(log2(N)-1)(4)/log(4) + 5^(log2(N)-2)(8)/log(8) +...+ 5(n/2)^2*log(n/2)) + n^2*logn
+T(N) = Θ(N^log2(5) * log^-1(n))
+
+Apply Master Method
+f(n) = Θ(n^logb(a)-e * log^k(n)) where k>=0 then T(n) = Θ(n^logb(a) * log^k+1(n)
+T(n) = Θ(n^log2(5) * log^-1(n)) same as algebraic
+
 
