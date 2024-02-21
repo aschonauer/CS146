@@ -1,1 +1,13 @@
-
+To find the unique integer triplets that sum up to 0 in the array
+it is important to check every combination without repeating the same
+indexes.
+To do this I created nested for loops where the outer one goes through
+every element but stops 2 short of the end to allow for the other 2 
+indexes to be there at the end. The middle for loop goes through the array
+always starting one above the first loop, and the last loop goes through
+the array starting one above the middle loop. Looping through the array 
+in this way will test every combination of triplets in the array without
+duplicating indexes. 
+Another thing that we wanted to watch out for was not duplicating triplets.
+To avoid this I created an if statement to see if the sorted triplet is not
+in the new triplet array before adding it.
