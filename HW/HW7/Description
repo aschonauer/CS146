@@ -1,1 +1,8 @@
+minMeetingRooms is a function used to figure out the number of servers needed given
+an amount of time intervals.
 
+First the List/Array is sorted based on the first number in the intervals making sure
+to keep the intervals in pairs together. This lets us see if the starting value is
+going to overlap into the previous interval if it does, it increments the amount of 
+servers needed to run all of the jobs (Starting value is 1). If there are no
+intervals then it just returns 0. 
