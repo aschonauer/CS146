@@ -1,0 +1,8 @@
+The function LongestPalindrome takes in a string, splits it
+into an array of letters, sorts it, then for every letter
+it checks using a nested for loop if there are two of the same
+letter it adds them to the beginning and end of a list or arraylist called pal
+which makes the letters in the array of letters null so that they can
+not be used again. At the end it takes the first letter that is not
+null and adds it into the middle of the list and then breaks out 
+and then returns the size of the palindrome created by the list pal.
