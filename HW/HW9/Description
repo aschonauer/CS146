@@ -1,0 +1,9 @@
+The function find lowestCommonAncestor finds the common ancestor of 2 nodes 
+closest to the nodes in a BST. It takes in the root node and the 2 nodes and 
+then uses recursion to go down the tree and while the 2 nodes are both in
+the same direction (either both greater or both less than the current node)
+Once the node either is the current node or the 2 nodes are in different
+directions it returns the current node back through the recursion.
+
+The way I tested it was taking in user inputs to create the BST and then 
+choosing which ones will be the 2 nodes to find the lowest common ancestor.
