@@ -1,1 +1,8 @@
-
+The function invertTree takes in a TreeNode parameter, the root
+of the tree. I used recursion to recurse down the tree to the
+lowest nodes which would then swap each pair of child nodes. If
+a node does not exist it swaps the null value with the other
+child. This way of inverting the tree works really well since 
+when the nodes are swapped their children stay the same moving
+them to the other side, which is what we want to do to invert 
+the tree.
