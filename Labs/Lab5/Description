@@ -1,1 +1,6 @@
-
+The function isValidBST is implemented by taking in the root of 
+a potential BST and then calls a helper function, inOrder, to 
+get an array of the nodes in in-order traversal order, which if
+it is a valid BST then the entire array should be in ascending
+order, otherwise the tree is not a BST and returns false. So there
+is a for loop to check the array to see if it is in order.
