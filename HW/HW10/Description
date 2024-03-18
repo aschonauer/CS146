@@ -1,1 +1,16 @@
+The function levelOrder takes in the root of the tree and returns 
+a list of nodes sorted by each level of the tree. 
 
+I implemented this by first returning an empty list if there is no
+root node. And if there is a tree then it adds the value of the root
+to a list which is added to the list of levels in the tree since the
+root is always on its own level. Then I created another list containing
+just the root which while this list has a node in it then it will repeat
+the following steps:
+  for every node in the list it will pop it, and then add its child
+  nodes to itself. The new nodes' values are added to  a list of values
+  which is then added to the level list. All of these child nodes will
+  be on the same level since when starting at the root you are creating
+  a list going down the tree popping one at a time since at the start
+  the list will have nodes of the same level since it always appends
+  the next level using the children nodes.
