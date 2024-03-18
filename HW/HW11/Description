@@ -1,1 +1,13 @@
+The function floodFill takes in a 2d array of integers which
+represent pixels in an image and fills a potion determined by
+the row (sr) and column (sc) all of the same color pixels
+next to the targeted one will be changed to the given color.
 
+I implemented this function recursively. If given an invalid 
+row or column number the function will return the original 
+image. Then it saves the color of the target pixel (original
+color) and then changes the color of the pixel to the new
+color. Then it will check each pixel in the 4 directions to
+see if it is the original color, if it is then it will recurse
+to change that color and move around from there. At the end
+of the function it returns the changed image. 
