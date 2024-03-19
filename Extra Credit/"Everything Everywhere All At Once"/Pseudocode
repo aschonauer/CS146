@@ -24,7 +24,7 @@ def matrixToList(matrix)
         adj_list[row_num].append(col_num)
   return adj_list
 
-def reverseEdges(graph)
+def reverseEdgesList(graph)
   new_graph <- empty hash/dict
   for rowkey in graph
     new_graph[rowkey] <- empty list/array
@@ -33,4 +33,11 @@ def reverseEdges(graph)
       new_graph[colval].append(rowkey)
   return new_graph
 
-
+def reverseEdgesMatrix(graph)
+  new_graph <- empty list/2d array
+  for row in graph
+    new_graph <- empty row size of length
+  for row in graph
+    for col in graph
+      new_graph[col][row] = graph[row][col]
+  return new_graph
