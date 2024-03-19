@@ -1,0 +1,36 @@
+def listToMatrix(adj_list)
+  m <- empty matrix
+  matrix_row <- 0
+  for each rowkey in adj_list
+    m <- new list/array
+    for each columnkey in adj_list
+      if columnkey is in list of adj_list[row_key]
+        m[matrix_row].append(1) 
+      else
+        m[matrix_row].append(0)
+    matrix_row++
+  return m
+
+def matrixToList(matrix)
+  adj_list <- empty dict/ hashmap
+  row_num  <- 0
+  for each row in matrix
+    row_num <- row_num + 1
+    adj_list[row_num] <- empty list
+    col_num <- 0
+    for each num in row:
+      col_num <- col_num + 1
+      if num is equal to 1
+        adj_list[row_num].append(col_num)
+  return adj_list
+
+def reverseEdges(graph)
+  new_graph <- empty hash/dict
+  for rowkey in graph
+    new_graph[rowkey] <- empty list/array
+  for rowkey in graph
+    for colval in graph
+      new_graph[colval].append(rowkey)
+  return new_graph
+
+
