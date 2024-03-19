@@ -1,13 +1,1 @@
-1 Given an adjacency list, how can you convert it to an adjacency matrix? 
-  - The first index of the adjacency list is the first row of the matrix and so on.
-    From there each column also represents all the indexes and the value at each spot
-    becomes True if the element of the row shares an edge with that element and False
-    if not. So what we have to do is just go through each index of the list, make
-    a matrix where the rows and columns are the elements in the list and then find for
-    each value in the matrix if there are edges connecting each element to others.
-
-2 Given an adjacency matrix, how can you convert it to an adjacency list? 
-
-
-3 Given a directed graph, how can you reverse the direction of each edge? 
 
