@@ -7,7 +7,14 @@
     each value in the matrix if there are edges connecting each element to others.
 
 2 Given an adjacency matrix, how can you convert it to an adjacency list? 
-
+  - You take each row of the adjacency matrix and each index num becomes each node
+    in the adjacency list (starting at 1). And for each element in the row the index
+    of every true value gets appended to a list in the adjacency list to the
+    associated row key.
 
 3 Given a directed graph, how can you reverse the direction of each edge? 
-
+  - First create an empty dictionary/hashmap for representing the new reversed edges 
+    graph. Make sure there are empty lists at each key of the original. Go through each 
+    list value in each key and use that value as the key for the reversed graph and add the
+    current key of the graph and add it to the list of the reversed list key. This 
+    effectively points each value in the original graph to the keys.
