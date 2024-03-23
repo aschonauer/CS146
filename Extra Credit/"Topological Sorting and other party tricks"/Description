@@ -1,1 +1,22 @@
+Kahn's Algorithm & BFS:
+  Kahn's Algorithm and BFS work exactly the same to topologically sort
+  given an adjacency list. They will both use a queue and a sorted list 
+  to get the nodes that get popped. First the queue takes in all keys
+  with 0 in-degrees, then it pops the first item and adds it to the 
+  sorted list and decrements the in-degrees of the ones that node pointed
+  at. If any reach 0 then add them to the queue and repeat until the queue
+  is empty. If the length of the sorted list and the length of the 
+  adjacent list are not equal, that means there is a cycle in the graph
+  and could not have been topologically sorted and returns an empty list.
+
+DFS:
+  This sorts the graph topologically using a stack which gets reversed at
+  the end. This is very similar to BFS, it just uses out-degrees instead
+  of in-degrees. It appends every node with no out-degrees to a stack and
+  pops them and decrements the out-degrees of the nodes that point to it.
+  It also appends the nodes that now have 0 out-degrees. Then to make sure
+  there were no cycles it makes sure that the length of the visited nodes
+  is equal to the length of the adjacency list. If not it returns an empty
+  list otherwise it will return the reversed visited list.
+
 
