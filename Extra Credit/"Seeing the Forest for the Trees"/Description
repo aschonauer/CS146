@@ -1,1 +1,16 @@
 
+Red-Black Trees, AVL trees and B Trees are all self-balancing trees
+that can have useful advantages. Worst-case time complexity is only
+O(logn) and best case is O(1). The tree balancing itself helps
+prevent really large time complexities for worst case scenarios and
+limits it to O(logn). This means that finding specific nodes, 
+inserting nodes, deleting nodes, and traversing the tree will not
+take as long as in a normal BST. However balanced trees may need
+more memory than an unbalanced BST. Ordinary BSTs are also much 
+easier to implement. 
+  Other advantages of self-balancing trees include balanced height,
+shorter search time, consistent performance, and easy to find space
+complexity. 
+  Places these trees are used are for indexing records in a data base,
+file systems, making symbol tables, network routing, version control
+systems, geospacial data and maps, and plenty more applications. 
