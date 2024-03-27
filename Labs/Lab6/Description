@@ -1,1 +1,15 @@
 
+The function canFinish takes in the number of courses and the list of
+prerequisites. It uses a helper function to count the indegrees which
+is a hashmap of how many classes are needed to take before taking the
+other course based on the prerequisites list which is a 2d array. 
+
+Then it sorts in using Khan's algorithm, append all 0 indegree courses
+to a queue and while there are items in the queue pop the value, append
+it to a sorted list, and for each prerequisite pair decrement indegree
+for each node the popped node pointed to and add it to the queue if it
+becomes 0 indegrees. 
+
+After this a successfully sorted list will have the same length of each
+class which is stored in the indegree list. If not there was a cycle and
+it is not possible to finish these courses. 
