@@ -27,17 +27,20 @@ def canFinish(numCourses, prerequisites):
                 in_degrees[pair[0]] -= 1
                 if in_degrees[pair[0]] == 0:
                     queue.append(pair[0])
-    if len(sorted) != len(in_degrees):
-        return False
-    return True
+    return len(sorted) == len(in_degrees)
 
 
 courses = 4
 prereq = [[1, 2], [2, 0], [3, 0], [3, 1]]
 print(canFinish(courses, prereq))
 print("Expected: True")
-
+print()
 courses = 5
 prereq = [[1, 2], [2, 0], [3, 0], [3, 1], [0, 1]]
+print(canFinish(courses, prereq))
+print("Expected: False")
+print()
+courses = 4
+prereq = [[1, 2], [2, 0], [0, 1]]
 print(canFinish(courses, prereq))
 print("Expected: False")
