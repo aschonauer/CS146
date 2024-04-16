@@ -1,1 +1,19 @@
+The function minCostToSupplyWater takes in the parameters
+n (number of houses), wells (an array of integers representing
+the cost to install a well at each house), and pipes (an array
+of arrays representing the cost of pipes to connect houses), to
+find the minimum cost to supply water to every house.
+
+First it creates a hashmap out of the pipe list to make easier
+to access elements. Then it finds the minimum well out of all
+of them and adds that cost to the total and adds it to a list
+of visited houses.
+
+Then it uses Prim's algorithm, starting at the minimum cost
+well house. It spreads outwards taking the lowest cost that it
+connects to also taking into account the cost it would take
+to make a well instead of laying pipes. It also keeps track if
+all the connections are already visited and then runs prim's
+algorithm on a non visited least amount cost well to find the 
+disjoint costs.
 
