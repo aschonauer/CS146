@@ -1,0 +1,10 @@
+The function findTheCity finds the city with the least
+neighbors within a given distance. It is implemented using
+a Floyd Warshall algorithm which finds every route from every
+node and keeps the shortest paths saved into an array of
+various distances. It uses 3 for loops to find every route.
+
+After that algorithm it takes each distance less or equal to
+the threshold and increments the amount of neighbors to that
+specific city. Then it finds which has the least amount of 
+neighbors and then returns that city.
