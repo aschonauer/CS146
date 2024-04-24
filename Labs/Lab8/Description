@@ -1,0 +1,22 @@
+The function coinChange takes in an array of coin values and an amount
+to meet returning the least amount of coins that make up that amount.
+
+I implemented this function using dynamic programming and memoization.
+First I create an array full of max values for every amount, which will
+represent the smallest number of coins for each capacity represented by
+the index. We start at capacity 0 and work up to the amount. If the
+capacity is 0, there are no coins needed so I manually set that index to
+0. 
+
+Then for every index, every coin is checked to see if is subtracted from
+the current capacity it is greater or equal to 0. If it is it will check
+to see if adding the current coin to the amount of the minimum amount of
+coins from the capacity remaining if the coin was added is less than using
+the current value at the current capacity (which starts at the maximum amount
+and then changes to different values depending on which coin is added).
+
+This function repeats this process until every capacity is filled out,
+some will remain at the max size due to the amount not being able to 
+be made with the given coins. If the desired amount of coins at
+amount is not the maximum size it will return the count of coins,
+otherwise there is no combination of coins and will return -1.
